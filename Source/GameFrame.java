@@ -8,7 +8,7 @@ public class GameFrame extends JFrame {
     public static final int WIDTH = 600;
     public static final int HEIGHT = 400;
 
-    GameFrame() {
+    public GameFrame() {
         super("Oyun");
         this.setSize(WIDTH, HEIGHT);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
