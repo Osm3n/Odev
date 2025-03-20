@@ -35,8 +35,7 @@ public class Player {
         centerY = playerY + (diameter / 2);
         speed = 10;
         try {
-            image = ImageIO.read(new File(
-                    "C:\\Users\\osman\\OneDrive\\Desktop\\OsmanKuru_241101005_Bil211_Ödev\\Source\\images\\player.jpg"));
+            image = ImageIO.read(new File("Source/images/player.jpg"));
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

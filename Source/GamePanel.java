@@ -11,12 +11,12 @@ import javax.swing.JPanel;
 
 import Source.Zombies.ParentZombie;
 
-public class GamePanel extends JPanel {
+public class GamePanel extends JPanel implements Runnable {
     private Image backgroundImage;
     public boolean keyPressed = false;
     public static final int WIDTH = 600;
     public static final int HEIGHT = 400;
-    private GameLoop loop;
+    Thread thread;
 
     ArrayList<ParentZombie> zombies = new ArrayList<>();
     Player player;
@@ -31,8 +31,7 @@ public class GamePanel extends JPanel {
 
         System.out.println(GameFrame.WIDTH);
         try {
-            backgroundImage = ImageIO.read(new File(
-                    "C:\\Users\\osman\\OneDrive\\Desktop\\OsmanKuru_241101005_Bil211_Ödev\\Source\\images\\backgroundImage.jpg"));
+            backgroundImage = ImageIO.read(new File("Source/images/backgroundImage.jpg")); // Use relative path
         } catch (Exception e) {
             System.out.println("unable to find file");
         }
@@ -84,5 +83,17 @@ public class GamePanel extends JPanel {
 
         }
 
+    }
+
+    public void startThread() {
+        thread = new Thread(this);
+        thread.start();
+    }
+
+    @Override
+    public void run() {
+        while (thread != null) {
+
+        }
     }
 }
