@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import Source.Zombies.ParentZombie;
 
-public class GameLoop implements Runnable {
+public class GameLoop {
     int wave = 1;
     GamePanel panel;
 
@@ -22,8 +22,4 @@ public class GameLoop implements Runnable {
         return zombies;
     }
 
-    @Override
-    public void run() {
-
-    }
 }

@@ -23,6 +23,8 @@ public class GamePanel extends JPanel {
 
     public GamePanel() {
         this.setSize(GamePanel.WIDTH, GamePanel.HEIGHT);
+        setFocusable(true);
+        this.requestFocusInWindow();
         // loop = new GameLoop(this);
 
         player = new Player("Player1", 100, GameFrame.WIDTH / 2, GameFrame.HEIGHT / 2);
