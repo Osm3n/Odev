@@ -21,7 +21,8 @@ public class Player {
     public double centerY;
     private Image image;
 
-    public Player(String name, int maxHealth, int startingPointX, int startingPointY) {
+    Player(String name, int maxHealth, int startingPointX, int startingPointY) {
+
         this.name = name;
         this.maxHealth = maxHealth;
         points = 0;
