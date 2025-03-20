@@ -13,7 +13,7 @@ public class Player {
     private int currentHealth;
     private int points;
     private int currentWave;
-    private int speed;
+    public int speed;
     private static final int diameter = 40;
     public int playerX;
     public int playerY;
@@ -33,6 +33,7 @@ public class Player {
         System.out.println(startingPointX);
         centerX = playerX + (diameter / 2);
         centerY = playerY + (diameter / 2);
+        speed = 10;
         try {
             image = ImageIO.read(new File(
                     "C:\\Users\\osman\\OneDrive\\Desktop\\OsmanKuru_241101005_Bil211_Ödev\\Source\\images\\player.jpg"));
@@ -51,15 +52,4 @@ public class Player {
         paint(g);
     }
 
-    void move(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_W) {
-            centerY -= speed;
-        } else if (e.getKeyCode() == KeyEvent.VK_S) {
-            centerY += speed;
-        } else if (e.getKeyCode() == KeyEvent.VK_D) {
-            centerX += speed;
-        } else if (e.getKeyCode() == KeyEvent.VK_A) {
-            centerY = speed;
-        }
-    }
 }

@@ -55,17 +55,33 @@ public class GamePanel extends JPanel {
 
         @Override
         public void keyTyped(KeyEvent e) {
-            System.out.println("da");
+
         }
 
         @Override
         public void keyPressed(KeyEvent e) {
-            System.out.println("dsa");
+            if (e.getKeyCode() == KeyEvent.VK_W) {
+                player.playerY -= player.speed;
+            }
+            if (e.getKeyCode() == KeyEvent.VK_S) {
+                player.playerY += player.speed;
+            }
+            if (e.getKeyCode() == KeyEvent.VK_D) {
+                player.playerX += player.speed;
+            }
+            if (e.getKeyCode() == KeyEvent.VK_A) {
+                player.playerX -= player.speed;
+            }
+            repaint();
         }
 
         @Override
         public void keyReleased(KeyEvent e) {
-            System.out.println("dsada");
+
+        }
+
+        void move(KeyEvent e) {
+
         }
 
     }
