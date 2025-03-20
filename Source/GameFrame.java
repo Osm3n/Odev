@@ -10,10 +10,11 @@ public class GameFrame extends JFrame {
 
     public GameFrame() {
         super("Oyun");
-        this.setSize(WIDTH, HEIGHT);
+        // this.setSize(WIDTH, HEIGHT);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(new BorderLayout());
         this.add(new GamePanel(), BorderLayout.CENTER);
+        this.pack();
         this.setVisible(true);
 
     }

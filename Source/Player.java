@@ -1,6 +1,7 @@
 package Source;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 
 import javax.imageio.ImageIO;
@@ -12,6 +13,7 @@ public class Player {
     private int currentHealth;
     private int points;
     private int currentWave;
+    private int speed;
     private static final int diameter = 40;
     public int playerX;
     public int playerY;
@@ -48,7 +50,15 @@ public class Player {
         paint(g);
     }
 
-    static int getDiameter() {
-        return diameter;
+    void move(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_W) {
+            centerY -= speed;
+        } else if (e.getKeyCode() == KeyEvent.VK_S) {
+            centerY += speed;
+        } else if (e.getKeyCode() == KeyEvent.VK_D) {
+            centerX += speed;
+        } else if (e.getKeyCode() == KeyEvent.VK_A) {
+            centerY = speed;
+        }
     }
 }

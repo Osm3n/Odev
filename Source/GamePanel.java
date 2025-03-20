@@ -2,7 +2,7 @@ package Source;
 
 import java.awt.Graphics;
 import java.awt.Image;
-
+import java.awt.event.*;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -13,15 +13,19 @@ import Source.Zombies.ParentZombie;
 
 public class GamePanel extends JPanel {
     private Image backgroundImage;
+    public boolean keyPressed = false;
+    public static final int WIDTH = 600;
+    public static final int HEIGHT = 400;
     private GameLoop loop;
+
     ArrayList<ParentZombie> zombies = new ArrayList<>();
     Player player;
 
     public GamePanel() {
-        this.setSize(GameFrame.WIDTH, GameFrame.HEIGHT);
-        loop = new GameLoop(this);
+        this.setSize(GamePanel.WIDTH, GamePanel.HEIGHT);
+        // loop = new GameLoop(this);
+
         player = new Player("Player1", 100, GameFrame.WIDTH / 2, GameFrame.HEIGHT / 2);
-        zombies = loop.addZombies();
 
         System.out.println(GameFrame.WIDTH);
         try {
@@ -30,6 +34,8 @@ public class GamePanel extends JPanel {
         } catch (Exception e) {
             System.out.println("unable to find file");
         }
+        this.addKeyListener(new key());
+        // zombies = loop.addZombies();
         this.repaint();
     }
 
@@ -41,7 +47,24 @@ public class GamePanel extends JPanel {
             zombie.draw(g);
         }
 
-        // Draw the background image.
-        //
+    }
+
+    class key implements KeyListener {
+
+        @Override
+        public void keyTyped(KeyEvent e) {
+            System.out.println("da");
+        }
+
+        @Override
+        public void keyPressed(KeyEvent e) {
+            System.out.println("dsa");
+        }
+
+        @Override
+        public void keyReleased(KeyEvent e) {
+            System.out.println("dsada");
+        }
+
     }
 }

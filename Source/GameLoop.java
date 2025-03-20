@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 import Source.Zombies.ParentZombie;
 
-public class GameLoop {
+public class GameLoop implements Runnable {
     int wave = 1;
+    GamePanel panel;
 
     public GameLoop(GamePanel panel) {
+        this.panel = panel;
 
     }
 
@@ -18,5 +20,10 @@ public class GameLoop {
         }
 
         return zombies;
+    }
+
+    @Override
+    public void run() {
+
     }
 }
